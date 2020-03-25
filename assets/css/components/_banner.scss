@@ -1,0 +1,71 @@
+.banner {
+  &__img {
+    @include overlay($dark);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &--lg {
+      height: 320px;
+
+      @include mediaquery--sm() {
+        height: 188px;
+      }
+    }
+
+    &--md {
+      height: 200px;
+
+      @include mediaquery--sm() {
+        height: 128px;
+      }
+    }
+  }
+
+  &__content {
+    @include center();
+    padding: 0 16px;
+    text-align: center;
+    z-index: 99;
+    color: $white;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    &--lg {
+      font-size: 32px;
+      @include mediaquery--sm() {
+        font-size: 28px;
+      }
+    }
+
+    &--md {
+      font-size: 24px;
+      @include mediaquery--sm() {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__sub {
+    letter-spacing: 5px;
+
+    &--lg {
+      font-size: 20px;
+      @include mediaquery--sm() {
+        font-size: 16px;
+      }
+    }
+
+    &--md {
+      font-size: 16px;
+
+      @include mediaquery--sm() {
+        font-size: 14px;
+      }
+    }
+  }
+}

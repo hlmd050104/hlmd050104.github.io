@@ -1,0 +1,7 @@
+.btn-group {
+  &__item:not(:first-child) {
+    @include mediaquery--not-lg() {
+      margin-top: 32px;
+    }
+  }
+}

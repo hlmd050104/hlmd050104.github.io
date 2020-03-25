@@ -1,0 +1,17 @@
+.container {
+  width: $container-width;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  @include mediaquery--md() {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include mediaquery--sm() {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+.banner-group {
+  &__item {
+    &--lg:not(:first-child) {
+      @include mediaquery--not-lg() {
+        margin-top: 5px;
+      }
+    }
+
+    &--md:not(:first-child) {
+      @include mediaquery--not-lg() {
+        margin-top: 32px;
+      }
+    }
+  }
+}

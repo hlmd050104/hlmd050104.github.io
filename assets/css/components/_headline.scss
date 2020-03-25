@@ -1,0 +1,38 @@
+.headline {
+  margin-bottom: 16px;
+  line-height: 1;
+  
+
+  &__sub {
+    letter-spacing: 5px;
+  }
+
+  &--lg {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+
+  &--xl {
+    font-size: 32px;
+  }
+
+  &--md {
+    font-size: 24px;
+  }
+
+  &--sm {
+    font-size: 20px;
+  }
+
+  &--xs {
+    font-size: 16px;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--dark {
+    color: $gray-dark;
+  }
+}

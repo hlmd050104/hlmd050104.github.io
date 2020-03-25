@@ -1,0 +1,44 @@
+.intro {
+  position: relative;
+
+  &__video {
+    max-width: 100%;
+    @include mediaquery--not-lg() {
+      display: none;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 0 32px;
+    @include center();
+
+    .intro__title {
+      @include mediaquery--sm() {
+        font-size: 24px;
+      }
+      font-size: 36px;
+      color: $white;
+      line-height: 1.5;
+      // opacity: 0;
+      transition: 0.5s all;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    display: none;
+
+    &--tb {
+      @include mediaquery--md() {
+        display: block;
+      }
+    }
+
+    &--sp {
+      @include mediaquery--sm() {
+        display: block;
+      }
+    }
+  }
+}

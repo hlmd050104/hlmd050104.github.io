@@ -1,0 +1,162 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
+  .navbar {
+    @include flexCenter(row);
+    @include mediaquery--lg() {
+      padding: 0 32px;
+    }
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    position: relative;
+    line-height: 1;
+
+    .navbar__expanded {
+      @include flexCenter(row);
+      width: 100%;
+
+      .navbar__logo {
+        margin: 9px 0 15px;
+        @include mediaquery--sm() {
+          margin: 2px 0;
+        }
+
+        &--pc {
+          height: 30px;
+          @include mediaquery--sm() {
+            display: none;
+          }
+        }
+        &--sp {
+          display: none;
+          height: 52px;
+          @include mediaquery--sm() {
+            display: block;
+            padding: 0;
+          }
+        }
+      }
+
+      .navbar-list {
+        display: flex;
+        background-color: $white;
+
+        @include mediaquery--not-lg() {
+          position: absolute;
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          height: 100vh;
+          left: 0;
+          top: 56px;
+          overflow-y: auto;
+
+          &.open-menu {
+            display: block;
+          }
+        }
+
+        &__item {
+          &:not(:first-child):after {
+            @include mediaquery--lg() {
+              @include centerY();
+              border-right: 2px solid $gray;
+              height: 20px;
+              opacity: 0.3;
+              content: "";
+            }
+          }
+
+          &:hover {
+            .navbar-dropdown {
+              @include mediaquery--lg() {
+                opacity: 1;
+                pointer-events: all;
+              }
+            }
+          }
+        }
+
+        &__link {
+          @include mediaquery--not-lg() {
+            @include flexCenter();
+            border-bottom: 1px solid $middle-grey;
+            padding-left: 32px;
+            padding-right: 32px;
+          }
+
+          @include mediaquery--sm {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+
+          position: relative;
+          display: block;
+          padding: 21px 28px;
+
+          &:hover {
+            @include mediaquery--lg() {
+              padding-bottom: 17px;
+              border-bottom: 4px solid $primary;
+            }
+          }
+        }
+
+        &__icon {
+          @include mediaquery--not-lg() {
+            display: inline-block;
+          }
+          display: none;
+        }
+
+        .navbar-dropdown {
+          background-color: #eee;
+
+          &.open-menu-child {
+            display: block;
+          }
+          @include mediaquery--lg {
+            padding: 32px 0;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            pointer-events: none;
+            transition: 0.9s all;
+          }
+
+          @include mediaquery--not-lg() {
+            display: none;
+          }
+
+          &__item {
+            @include mediaquery--not-lg() {
+              padding: 20px 16px;
+            }
+          }
+
+          &__img {
+            @include mediaquery--lg {
+              @include overlay($primary);
+              position: relative;
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              height: 104px;
+              margin-bottom: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .navbar__hamburger {
+      display: none;
+
+      @include mediaquery--not-lg() {
+        display: block;
+      }
+    }
+  }
+}

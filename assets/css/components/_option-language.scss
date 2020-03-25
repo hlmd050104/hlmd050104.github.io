@@ -1,0 +1,16 @@
+.option-language {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  outline: 0;
+  appearance: none;
+  padding: 0 20px 0 8px;
+  background-image: url(../img/ico_arrow-down_white.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 10px;
+
+  > option {
+    color: $dark;
+  }
+}

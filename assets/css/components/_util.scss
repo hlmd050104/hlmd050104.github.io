@@ -1,0 +1,78 @@
+.u-mtb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.u-mtb-15 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.u-ml-15 {
+  margin-left: 15px;
+}
+
+.u-mr-15 {
+  margin-right: 15px;
+}
+
+.u-mb-32 {
+  margin-bottom: 32px;
+}
+
+
+.u-p-lg {
+  padding: 64px 16px;
+}
+
+.u-p-sm {
+  padding: 32px 16px;
+}
+
+.u-plr-32 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.u-ptb-32 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.u-pb-80 {
+  padding-bottom: 80px;
+}
+
+.u-justify {
+  text-align: justify;
+}
+
+.u-text-center {
+  text-align: center;
+}
+.u-fs-18 {
+  font-size: 18px;
+}
+
+.u-right {
+  display: block;
+  margin-left: auto;
+}
+
+@for $i from 1 through length($arr-color) {
+  [class^="col-"]:nth-child(#{$i}) {
+    .u-border-color {
+      @include mediaquery--lg {
+        border-bottom: 4px solid nth($arr-color, $i);
+      }
+    }
+  }
+}
+
+[class*="col-"]:not(:last-child) {
+  .navbar-dropdown__item {
+    @include mediaquery--not-lg() {
+      border-bottom: 1px solid $middle-grey;
+    }
+  }
+}

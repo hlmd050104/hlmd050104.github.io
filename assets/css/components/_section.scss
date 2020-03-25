@@ -1,0 +1,29 @@
+.section {
+  &--video {
+    > [class^="container"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--lg {
+    > [class^="container"] {
+      padding-top: 64px;
+    }
+  }
+
+  &--balance {
+    > [class^="container"] {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &--white {
+    background-color: $white;
+  }
+
+  &--grey {
+    background-color: $middle-grey;
+  }
+}
