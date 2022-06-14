@@ -9,6 +9,8 @@
   let lat = document.querySelector('.lat')
   let long = document.querySelector('.long')
   
+  console.log(latitude,longitude)
+  
   lat.innerText  = latitude
   long.innerText  = longitude
 })
