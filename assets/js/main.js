@@ -6,8 +6,11 @@
   
   navigator.geolocation.getCurrentPosition((position)=> {
   const { latitude, longitude } = position.coords;
-  console.log(latitude)
-  console.log(longitude)
+  const lat = document.querySelectorAll('.lat')
+  const long = document.querySelectorAll('.long')
+  
+  lat.innerText  = latitude
+  long.innerText  = longitude
 })
 
 })()
